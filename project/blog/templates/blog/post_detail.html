@@ -1,0 +1,123 @@
+{% extends "blog/base.html" %}
+{% load i18n %}
+{% block content %}
+
+<style>
+ /* Chat containers */
+.container.darker {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: hidden; /* Đảm bảo phần tràn sẽ bị ẩn */
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+.container.darker img {
+  float: left;
+  margin-right: 10px;
+  width: 40px; /* Đảm bảo kích thước cố định */
+  height: 40px;
+}
+
+.container.darker p {
+  margin: 5px 0;
+  word-wrap: break-word;       /* Ngắt từ dài */
+  overflow-wrap: break-word;   /* Hỗ trợ bổ sung */
+  white-space: pre-wrap;       /* Xuống dòng khi cần thiết */
+  max-width: 100%;             /* Không vượt quá giới hạn thẻ cha */
+  overflow: hidden;
+}
+
+.time-left {
+  align-self: flex-end;  /* Căn thời gian về phía cuối */
+  color: grey;
+  font-size: 12px;
+
+}
+
+/* Thêm phần dành riêng cho thẻ bình luận */
+.comment p {
+  
+  word-wrap: break-word;       /* Đảm bảo văn bản dài được ngắt */
+  word-break: break-all;       /* Ngắt từ ở bất kỳ điểm nào khi vượt quá giới hạn */
+ 
+ 
+  white-space: normal;         /* Văn bản có thể xuống dòng */
+  overflow: hidden;
+  margin: 5px 0;               /* Căn chỉnh lề */
+}
+.error{
+  color: #ba3939;
+
+   
+
+  }
+  
+</style>
+  <article class="media content-section">
+                          <!-- Thêm liên kết vào ảnh đại diện -->
+                          <a href="{% url 'user-profile-view' post.author.username %}">
+                            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                        </a>
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{% url 'user-profile-view' post.author.username %}">{{ post.author.profile.user_name  }}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        {% if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">{% trans "Update" %}</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}"> {% trans "Delete" %}</a>
+          </div>
+        {% endif %}
+      </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">{{ object.content }}</p>
+           <!-- Hiển thị nút like -->
+           <form action="{% url 'like-post' object.pk %}" method="post" class="mt-2">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">
+              {% trans "Like" %} ({{ object.like_count }})
+            </button>
+          </form>
+
+      <!-- Hiển thị form thêm bình luận -->
+          <br>
+      <form action="{% url 'comment-post' object.pk %}" method="post">
+        {% csrf_token %}
+        {% if messages %}
+        <div class="error">
+            {% for message in messages %}
+                <div {{ message.tags }}>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+        <textarea name="comment" rows="4" class="form-control" placeholder="{% trans 'Leave a comment' %}"></textarea>
+        <button type="submit" class="btn btn-success mt-2">{% trans "Post Comment" %}</button>
+      </form>
+
+      <!-- Hiển thị tất cả các bình luận -->
+       
+      <div class="comments-section">
+        {% for comment in comments %}
+        <div class="container darker">
+          <a href="{% url 'user-profile-view' comment.author.username %}">
+            <img src="{{ comment.author.profile.image.url }}" alt="Avatar" class="rounded-circle" style="width:40px; height:40px;">
+          </a>
+          <p><strong>{{ comment.author.profile.user_name }}</strong> - {{ comment.date_posted|date:"F d, Y" }}</p>
+          <p>{{ comment.content }}</p>
+          <span class="time-left">{{ comment.date_posted|date:"H:i" }}</span>
+        </div>
+      {% empty %}
+        <p>{% trans "No comments yet" %}</p>
+      {% endfor %}
+      
+      </div>
+      
+    </div>
+  </article>
+
+{% endblock content %}

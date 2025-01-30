@@ -1,0 +1,167 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+
+<style>
+    /* Container lớp row */
+    .row_1 {
+        z-index: -100;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+    /* Cột col-md-8 */
+    .col-md-8_1 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    /* Cột col-md-4 */
+    .col-md-4_1 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    /* Hình ảnh profile dạng hình tròn */
+    
+    
+    
+    
+    /* Danh sách bài đăng */
+    .list-group {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-radius: 0.25rem;
+    }
+    
+    .list-group-item_1 {
+        
+        display: block;
+        padding: 0.75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    
+    .form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input.form-control, select.form-control, textarea.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+button.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+    
+
+    </style>
+    
+
+
+    
+
+<div class="container mt-7">
+    <div class="row_1">
+        <!-- Thông tin người dùng -->
+         
+        <div class="col-md-8_1">
+            <div class="media">
+                <img class="rounded-circle account-img mb-3" src="{{ user.profile.image.url }}" style="width: 150px; height: 150px;">
+                <div class="media-body">
+                    <h2 class="account-heading">{{ user.profile.user_name }}</h2>
+                    <p class="text-secondary">{{ user.email }}</p>
+                    <p class="text-secondary">{% trans "PR content:" %} {{ user.profile.PR_content }}</p>
+                </div>
+            </div>
+
+            <!-- Form cập nhật -->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">{% trans "Update Profile" %}</legend>
+        
+        <!-- Hiển thị các trường của `u_form` -->
+        <h4>{% trans "User Information" %}</h4>
+        {% for field in u_form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        
+        <!-- Hiển thị các trường của `p_form` -->
+      
+        {% for field in p_form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit" onclick="Update_Profile_Mess()">{% trans "Update" %}</button>
+    </div>
+</form>
+
+        </div>
+
+        <!-- Danh sách bài đăng -->
+        <div class="col-md-4_1">
+            <h4 class="border-bottom pb-2">{% trans 'Posts by' %} {{  user.profile.user_name  }}</h4>
+            <ul class="list-group">
+                {% for post in user.post_set.all %}
+                    <li class="list-group-item_1">
+                        <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+                        <small class="text-muted d-block">{{ post.date_posted|date:"F d, Y" }}</small>
+                    </li>
+                {% empty %}
+                    <p>{% trans 'This user has no posts yet.' %}</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function Update_Profile_Mess(){
+        alert("Your account has been updated!");
+    }
+</script>
+{% endblock content %}

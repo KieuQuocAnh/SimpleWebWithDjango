@@ -1,0 +1,44 @@
+/* Container cho nút upload */
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nút bấm tùy chỉnh */
+.custom-upload-button {
+    background-color: #007bff; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 12px 30px; /* Cỡ padding tạo không gian xung quanh chữ */
+    border-radius: 8px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ chuột chuyển thành hình tay khi hover */
+    display: inline-block;
+    font-size: 16px; /* Cỡ chữ */
+    text-align: center; /* Căn giữa nội dung */
+    font-weight: 600; /* Đậm chữ */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2); /* Đổ bóng nhẹ cho nút */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+/* Hiệu ứng hover */
+.custom-upload-button:hover {
+    background-color: #0056b3; /* Thay đổi màu nền khi hover */
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); /* Đổ bóng đậm hơn khi hover */
+    transform: translateY(-2px); /* Nâng nút lên khi hover */
+}
+
+/* Hiệu ứng focus */
+.custom-upload-button:focus {
+    outline: none; /* Bỏ outline mặc định khi focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Thêm viền màu xanh khi focus */
+}
+
+/* Hiệu ứng click */
+.custom-upload-button:active {
+    background-color: #004085; /* Thay đổi màu nền khi click */
+    transform: translateY(2px); /* Nút đẩy xuống khi click */
+}
+
+
+input[type="file"] {
+    display: none;
+}

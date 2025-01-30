@@ -1,0 +1,91 @@
+/* Định dạng chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Định dạng cho body */
+body {
+    min-height: 100vh;
+    display: flex;
+    background-color: #e7e9f5;
+}
+
+/* Định dạng sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background: #ffffff;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+/* Sidebar active */
+.sidebar.active {
+    width: 240px;
+}
+
+/* Logo */
+.logo_content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.logo_content .logo_name {
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo_name {
+    opacity: 1;
+}
+
+/* Menu icon */
+.menu-icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Navigation list */
+.nav_list {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.nav_list li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.nav_list li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+}
+
+.nav_list li a .icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+}
+
+.links_name {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+}

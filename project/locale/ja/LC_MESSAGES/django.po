@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-29 09:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\blog\forms.py:7
+msgid "Title"
+msgstr "タイトル"
+
+#: .\blog\forms.py:10
+msgid "What is the title of the story you want?"
+msgstr "ストーリーのタイトルは"
+
+#: .\blog\forms.py:14
+msgid "Content"
+msgstr "コンテンツ"
+
+#: .\blog\forms.py:17
+msgid "Can You Tell me your story in here"
+msgstr "君のストーリーを教えてくれる？"
+
+#: .\blog\templates\blog\base.html:19 .\blog\templates\blog\base.html:70
+#: .\blog\templates\blog\base.html:83
+msgid "Life of dictionary"
+msgstr "Life of dictionary"
+
+#: .\blog\templates\blog\base.html:79 .\blog\templates\blog\base.html:89
+msgid "Search..."
+msgstr "検索"
+
+#: .\blog\templates\blog\base.html:80 .\blog\templates\blog\base.html:90
+msgid "Search"
+msgstr "検索"
+
+#: .\blog\templates\blog\base.html:99
+msgid "languages"
+msgstr "言語"
+
+#: .\blog\templates\blog\base.html:127
+msgid "Home"
+msgstr "ホームページ"
+
+#: .\blog\templates\blog\base.html:128
+msgid "New Post"
+msgstr "記載"
+
+#: .\blog\templates\blog\base.html:129
+#: .\users\templates\users\password_change.html:4
+#: .\users\templates\users\password_change.html:11
+msgid "Password Change"
+msgstr "パスワードの変更"
+
+#: .\blog\templates\blog\base.html:130
+msgid "Logout"
+msgstr "ログアウト"
+
+#: .\blog\templates\blog\base.html:132 .\users\templates\users\login.html:13
+msgid "Login"
+msgstr "ログイン"
+
+#: .\blog\templates\blog\base.html:133
+msgid "Register"
+msgstr "新規登録"
+
+#: .\blog\templates\blog\home.html:19
+msgid "read more"
+msgstr "詳しく...."
+
+#: .\blog\templates\blog\home.html:33 .\blog\templates\blog\home.html:39
+#: .\blog\templates\blog\user_posts.html:36
+#: .\blog\templates\blog\user_posts.html:42
+msgid "First"
+msgstr "前に"
+
+#: .\blog\templates\blog\home.html:36 .\blog\templates\blog\home.html:40
+#: .\blog\templates\blog\user_posts.html:39
+#: .\blog\templates\blog\user_posts.html:43
+msgid "Previous"
+msgstr "後に"
+
+#: .\blog\templates\blog\home.html:57 .\blog\templates\blog\home.html:63
+#: .\blog\templates\blog\user_posts.html:66
+#: .\blog\templates\blog\user_posts.html:72
+msgid "Next"
+msgstr "次に"
+
+#: .\blog\templates\blog\home.html:60 .\blog\templates\blog\home.html:64
+#: .\blog\templates\blog\user_posts.html:69
+#: .\blog\templates\blog\user_posts.html:73
+msgid "Last"
+msgstr "最後"
+
+#: .\blog\templates\blog\post_confirm_delete.html:8
+#, fuzzy
+#| msgid "New Post"
+msgid "Delete Post"
+msgstr "記載"
+
+#: .\blog\templates\blog\post_confirm_delete.html:9
+msgid "Are you sure you want to delete the Post:"
+msgstr "このブログを削除したいでしょうか？"
+
+#: .\blog\templates\blog\post_confirm_delete.html:14
+msgid "Yes, Delete"
+msgstr "削除"
+
+#: .\blog\templates\blog\post_confirm_delete.html:15
+msgid "Cancel"
+msgstr "途中"
+
+#: .\blog\templates\blog\post_detail.html:70
+#: .\users\templates\users\profile.html:140
+msgid "Update"
+msgstr "更新"
+
+#: .\blog\templates\blog\post_detail.html:71
+msgid "Delete"
+msgstr "削除"
+
+#: .\blog\templates\blog\post_detail.html:81
+msgid "Like"
+msgstr "いいね！"
+
+#: .\blog\templates\blog\post_detail.html:98
+msgid "Leave a comment"
+msgstr "コメントします。"
+
+#: .\blog\templates\blog\post_detail.html:99
+msgid "Post Comment"
+msgstr "コメントを投稿する"
+
+#: .\blog\templates\blog\post_detail.html:114
+msgid "No comments yet"
+msgstr "コメントではなし"
+
+#: .\blog\templates\blog\post_form.html:9
+msgid "Blog Post"
+msgstr "ブログ投稿"
+
+#: .\blog\templates\blog\post_form.html:13
+msgid "Post"
+msgstr "投稿"
+
+#: .\blog\templates\blog\user_posts.html:5
+#: .\blog\templates\blog\user_profile_view.html:78
+#: .\users\templates\users\profile.html:148
+msgid "Posts by"
+msgstr "作成者は"
+
+#: .\blog\templates\blog\user_posts.html:25
+msgid "No posts found for this user."
+msgstr "こちらのユーザはブログがなし"
+
+#: .\blog\templates\blog\user_profile_view.html:72
+msgid "Profile of:"
+msgstr "プロファイル : "
+
+#: .\blog\templates\blog\user_profile_view.html:74
+msgid "email address:"
+msgstr "メールアドレス："
+
+#: .\blog\templates\blog\user_profile_view.html:75
+#: .\users\templates\users\profile.html:98
+msgid "PR content:"
+msgstr "フィードバッグ："
+
+#: .\blog\templates\blog\user_profile_view.html:86
+#: .\users\templates\users\profile.html:156
+msgid "This user has no posts yet."
+msgstr "こちらのユーザのはブログの投稿がなし"
+
+#: .\project\settings.py:119
+msgid "English"
+msgstr "英語"
+
+#: .\project\settings.py:120
+msgid "Vietnamese"
+msgstr "ベトナム語"
+
+#: .\project\settings.py:121
+msgid "Japanese"
+msgstr "日本語"
+
+#: .\project\settings.py:122
+msgid "Myanmar"
+msgstr "ミャンマー語"
+
+#: .\users\forms.py:25 .\users\forms.py:46
+msgid "Username"
+msgstr "ユーザ名"
+
+#: .\users\forms.py:27 .\users\forms.py:48
+msgid "Enter Your Register Username"
+msgstr "登録ユーザ名を入力してください"
+
+#: .\users\forms.py:30 .\users\forms.py:54
+msgid "Password"
+msgstr "パスワード"
+
+#: .\users\forms.py:34 .\users\forms.py:57
+msgid "Enter Your Password"
+msgstr "パスワードを入力"
+
+#: .\users\forms.py:50 .\users\forms.py:74
+msgid "Email address"
+msgstr "メールアドレス："
+
+#: .\users\forms.py:51 .\users\forms.py:75
+msgid "Required. Inform a valid email address."
+msgstr "有効なメールアドレスを入力してください"
+
+#: .\users\forms.py:52 .\users\forms.py:76
+msgid "Enter Your Email"
+msgstr "メリーゴーランドを入力してください"
+
+#: .\users\forms.py:62 .\users\forms.py:139
+msgid "Confirm Password"
+msgstr "パスワードを認証"
+
+#: .\users\forms.py:65
+msgid "Confirm Your Password"
+msgstr "もう一度パスワードの入力"
+
+#: .\users\forms.py:87
+msgid "Your name"
+msgstr "名"
+
+#: .\users\forms.py:91
+msgid "Enter Your name If You want"
+msgstr "君の名を教えてくれる？"
+
+#: .\users\forms.py:97
+msgid "About Your Self"
+msgstr "自己紹介"
+
+#: .\users\forms.py:99
+msgid "Do you Want to write something about yourself"
+msgstr "自己紹介しましょうか？"
+
+#: .\users\forms.py:104
+msgid "Upload Your Image"
+msgstr "プロファイの写真："
+
+#: .\users\forms.py:108
+msgid "Select a file"
+msgstr "ファイル"
+
+#: .\users\forms.py:130
+msgid "Old PassWord"
+msgstr "古いパスワード"
+
+#: .\users\forms.py:131
+msgid "Enter current password"
+msgstr "現在のパスワードを入力してください"
+
+#: .\users\forms.py:134
+msgid "PassWord"
+msgstr "パスワード"
+
+#: .\users\forms.py:136
+msgid "Enter new password"
+msgstr "新しいパスワードを入力"
+
+#: .\users\forms.py:141
+msgid "Confirm new password"
+msgstr "あたらしいパスワードを認証"
+
+#: .\users\templates\custom_widgets\custom_file_input.html:19
+msgid "Choose Your Image"
+msgstr "写真を選択"
+
+#: .\users\templates\users\login.html:9
+msgid "Log In"
+msgstr "ログイン"
+
+#: .\users\templates\users\login.html:15
+msgid "Forgot Password?"
+msgstr "パスワード忘れ"
+
+#: .\users\templates\users\login.html:21
+msgid "Need An Account?"
+msgstr "参加しましょうか？"
+
+#: .\users\templates\users\login.html:21
+msgid "Sign Up Now"
+msgstr "新規登録"
+
+#: .\users\templates\users\password_change.html:6
+msgid "Change Password...."
+msgstr "パスワードの変更"
+
+#: .\users\templates\users\password_change.html:16
+#: .\users\templates\users\register.html:14
+msgid "Simple Password"
+msgstr "シンプルのパスワード"
+
+#: .\users\templates\users\password_change.html:19
+#: .\users\templates\users\register.html:17
+msgid "Generated Password:"
+msgstr "生成されたパスワード"
+
+#: .\users\templates\users\password_change.html:22
+#: .\users\templates\users\register.html:20
+msgid "Copy"
+msgstr "コーピー"
+
+#: .\users\templates\users\password_reset.html:9
+msgid "Reset pasword"
+msgstr "パスワードをリセット"
+
+#: .\users\templates\users\password_reset.html:13
+msgid "Request Password Reset"
+msgstr "パスワードの設立先を届け"
+
+#: .\users\templates\users\password_reset_complete.html:9
+#: .\users\templates\users\password_reset_complete.html:13
+#: .\users\templates\users\password_reset_confirm.html:9
+#: .\users\templates\users\password_reset_confirm.html:13
+msgid "Reset Password"
+msgstr "パスワードをリセット"
+
+#: .\users\templates\users\password_reset_done.html:5
+msgid "An email has been sent with instructions to reset your Password"
+msgstr "パスワードの設立先はこちらのメールアドレスに届きました！"
+
+#: .\users\templates\users\profile.html:106
+msgid "Update Profile"
+msgstr "プロファイル更新"
+
+#: .\users\templates\users\profile.html:109
+msgid "User Information"
+msgstr "ユーザのインフォメーション"
+
+#: .\users\templates\users\register.html:9
+msgid "Join Today"
+msgstr "参考しましょうか"
+
+#: .\users\templates\users\register.html:25
+msgid "Sign Up"
+msgstr "登録"
+
+#: .\users\templates\users\register.html:30
+msgid "Already Have An Account?"
+msgstr "カウントがありますか"
+
+#: .\users\templates\users\register.html:31
+msgid "Sign In"
+msgstr "登録"

@@ -1,0 +1,90 @@
+{% extends "blog/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<style>
+    /* CSS styling */
+    
+    .profile-section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+
+
+    .profile-pic:hover {
+        transform: scale(1.1);
+    }
+
+    .profile-section h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .profile-section p {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .user-posts {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .user-posts li {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .user-posts li:hover {
+        background-color: #f1f1f1;
+    }
+
+    .user-posts a {
+        font-size: 18px;
+        color: #4CAF50;
+        text-decoration: none;
+    }
+
+    .user-posts a:hover {
+        text-decoration: underline;
+    }
+
+    .text-muted {
+        font-size: 14px;
+        color: #999;   
+    }
+</style>
+
+<div class="profile-section">
+    <h1>{% trans 'Profile of:' %} {{ User.profile.user_name }}</h1>
+    <img src="{{ User.profile.image.url }}" alt="Profile Picture" class="profile-pic">
+    <p>{% trans 'email address:' %} {{ User.email }}</p>
+    <p>{% trans 'PR content:' %} </p>
+    <p>{{ User.profile.PR_content}}</p>
+
+    <h2>{% trans 'Posts by' %} {{ User.profile.user_name }}</h2>
+    <ul class="user-posts">
+        {% for post in User.post_set.all %}
+            <li>
+                <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </li>
+        {% empty %}
+            <p>{% trans 'This user has no posts yet.' %}</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

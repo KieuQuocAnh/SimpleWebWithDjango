@@ -1,0 +1,224 @@
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+  ul {
+    margin: 0;
+  }
+  
+  .bg-steel {
+    background-color: #5f788a;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+  
+  /* Tùy chỉnh phần tử li có class nav-item dropdown */
+.nav-item.dropdown {
+  position: relative;
+  margin-right: 15px;
+}
+
+/* Tùy chỉnh link chính bên trong dropdown */
+.nav-item.dropdown .nav-link {
+  color: #ffffff; /* Màu chữ */
+  font-weight: 500; /* Độ đậm của chữ */
+  transition: color 0.3s ease; /* Hiệu ứng khi hover */
+  cursor: pointer;
+}
+
+.nav-item.dropdown .nav-link:hover {
+  color: #f1c40f; /* Màu chữ khi hover */
+}
+
+/* Tùy chỉnh menu hiển thị khi click vào dropdown */
+.nav-item.dropdown .dropdown-menu {
+  background-color: #5f788a; /* Màu nền dropdown */
+  border: none; /* Loại bỏ viền */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+/* Tùy chỉnh từng item bên trong dropdown */
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+  color: #ffffff; /* Màu chữ item */
+  padding: 10px 20px; /* Khoảng cách bên trong */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #32a852; /* Màu nền khi hover */
+  color: #ffffff; /* Màu chữ khi hover */
+}
+
+/* Arrow hiển thị trong menu */
+.nav-item.dropdown .dropdown-toggle::after {
+  margin-left: 5px;
+  vertical-align: 0.3em;
+  color: #ffffff; /* Màu của mũi tên */
+}
+
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
+  .profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden; 
+    border: 2px solid #32a852;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* Phân trang */
+.pagination-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.page-links {
+  display: inline-block;
+}
+
+.page-link {
+  color: #007bff;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.current-page {
+  color: #fff;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Danh sách bài đăng */
+.post-list .list-group-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-item .post-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-item .post-title:hover {
+  text-decoration: underline;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Cải thiện phần giao diện người dùng */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.account-heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.account-img {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+
+.media-body {
+  padding-top: 10px;
+}
+
+

@@ -1,0 +1,42 @@
+.custom-text-input {
+    width: 100%; /* Đảm bảo input chiếm hết chiều rộng của container */
+    padding: 12px 20px; /* Cỡ padding giúp input thoáng hơn */
+    font-size: 16px; /* Cỡ chữ vừa phải */
+    border: 2px solid #ddd; /* Đường viền mờ */
+    border-radius: 8px; /* Bo tròn góc */
+    background-color: #f9f9f9; /* Màu nền sáng */
+    color: #333; /* Màu chữ */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+/* Khi hover vào input */
+.custom-text-input:hover {
+    border-color: #007bff; /* Đổi màu viền khi hover */
+    background-color: #fff; /* Đổi màu nền khi hover */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Đổ bóng nhẹ */
+}
+
+/* Khi input được focus */
+.custom-text-input:focus {
+    outline: none; /* Bỏ outline mặc định */
+    border-color: #007bff; /* Đổi màu viền khi focus */
+    background-color: #fff; /* Đảm bảo màu nền khi focus */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Đổ bóng đậm hơn */
+    transform: translateY(-2px); /* Hiệu ứng nâng input lên khi focus */
+}
+
+/* Placeholder với kiểu chữ khác biệt */
+.custom-text-input::placeholder {
+    color: #bbb; /* Màu chữ placeholder */
+    font-style: italic; /* Kiểu chữ nghiêng */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+/* Khi input được focus, placeholder mờ đi */
+.custom-text-input:focus::placeholder {
+    opacity: 0; /* Ẩn placeholder khi focus */
+}
+.custom-file-upload[type="file"] {
+    display: none;
+}

@@ -1,0 +1,79 @@
+{% extends "blog/base.html" %}
+{% load i18n %}
+{% block content %}
+    {% for post in posts %} 
+        <article class="media content-section">
+                      <!-- Thêm liên kết vào ảnh đại diện -->
+                      <a href="{% url 'user-profile-view' post.author.username %}">
+                        <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                    </a>
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-profile-view' post.author.username %}">{{ post.author.profile.user_name  }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">
+                {% if post.content|length > 350 %}
+                    {{ post.content|slice:":350" }}... 
+                    <a href="{% url 'post-detail' post.id %}">{% trans "read more" %}</a>
+                {% else %}
+                    {{ post.content }}
+                {% endif %}
+          </div>
+        </article>
+    {% endfor %}
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mb-4">
+            
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="First">{% trans "First" %}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">{% trans "Previous" %}</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">{% trans "First" %}</span></li>
+                <li class="page-item disabled"><span class="page-link">{% trans "Previous" %}</span></li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if num == page_obj.number %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">{% trans "Next" %}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">{% trans "Last" %}</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">{% trans "Next" %}</span></li>
+                <li class="page-item disabled"><span class="page-link">{% trans "Last" %}</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+    <div class="user-list">
+        {% for user in users %}
+            <div class="user" onclick="openChat('{{ user.username }}')">
+                <img src="{{ user.profile_picture.url }}" alt="{{ user.username }}" class="profile-pic">
+                <span>{{ user.username }}</span>
+            </div>
+        {% endfor %}
+      </div>
+      
+      
+{% endblock content %}

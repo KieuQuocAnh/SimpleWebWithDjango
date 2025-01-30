@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--header-outer-height: 110px;
+	--header-inner-height: 70px;
+	--header-height-difference: calc(
+		var(--header-outer-height) - var(--header-inner-height)
+	);
+	--header-bg: #c8ece6;
+    
+}
+#header-outer{
+  z-index: 10; 
+}
+
+body {
+	font-family: "DM Sans", sans-serif;
+	background-color: #f2f5f7;
+	line-height: 1.5;
+	min-height: 300vh;
+	position: relative;
+ 
+}
+
+.responsive-wrapper {
+	width: 90%;
+	max-width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Sticky header */
+.header-outer {
+	/* Make it stick */
+	height: var(--header-outer-height);
+	position: sticky;
+	top: calc(
+		var(--header-height-difference) * -1
+	); /* Multiply by -1 to get a negative value */
+	display: flex;
+	align-items: center;
+
+	/* Other */
+	background-color: var(--header-bg);
+	box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+
+.header-inner {
+	/* Make it stick */
+	height: var(--header-inner-height);
+	position: sticky;
+	top: 0;
+
+	/* Other */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Styling of other elements */
+.header-logo img {
+	display: block;
+	height: calc(var(--header-inner-height) - 30px);
+}
+
+.header-navigation {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header-navigation a,
+.header-navigation button {
+	font-size: 1.125rem;
+	color: inherit;
+	margin-left: 1.75rem;
+	position: relative;
+	font-weight: 500;
+}
+
+.header-navigation a {
+	display: none;
+	font-size: 1.125rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.header-navigation button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+	transform: scalex(1);
+}
+
+.header-navigation a:after,
+.header-navigation button:after {
+	transition: 0.25s ease;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentcolor;
+	transform: scalex(0);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+.main {
+	margin-top: 3rem;
+}
+
+.widget {
+	width: 100%;
+	max-width: 1000px;
+	border-radius: 8px;
+	box-shadow: 0 15px 30px 0 rgba(0,0,0, 0.1);
+	background-color: #fff;
+	padding: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	font-size: 1.125rem;
+}
+
+.widget > * + * {
+	margin-top: 1.25em;
+}
+
+.widget h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.widget code {
+	display: inline-block;
+	padding: 0.125em 0.25em;
+	border-radius: 2px;
+	background-color: #bee5d3;
+}
+
+.widget strong {
+	font-weight: 700;
+}
+
+@media (min-width: 800px) {
+	.header-navigation a {
+		display: inline-block;
+	}
+
+	.header-navigation button {
+		display: none;
+	}
+}
+.header-navigation {
+    position: relative;
+    z-index: 1050;
+  }
+  
+    .content-section {
+      background: #ffffff;
+      padding: 10px 20px;
+      border: 1px solid #dddddd;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    
+    .article-title {
+      color: #444444;
+    }
+    
+    a.article-title:hover {
+      color: #428bca;
+      text-decoration: none;
+    }
+    
+    .article-content {
+      white-space: pre-line;
+    }
+    
+    .article-img {
+      height: 65px;
+      width: 65px;
+      margin-right: 16px;
+    }
+    
+    .article-metadata {
+      padding-bottom: 1px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #e3e3e3
+    }
+    
+    .article-metadata a:hover {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .article-svg {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle;
+    }
+    
+    .account-img {
+      height: 125px;
+      width: 125px;
+      margin-right: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .account-heading {
+      font-size: 2.5rem;
+    }
+    .profile-pic {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      overflow: hidden; 
+      border: 2px solid #32a852;
+      transition: transform 0.3s ease;
+      margin-right: 10px;
+  }
+  
+  .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+  .profile-pic:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+  }
+  /* Phân trang */
+  .pagination-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .page-links {
+    display: inline-block;
+  }
+  
+  .page-link {
+    color: #007bff;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .current-page {
+    color: #fff;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Danh sách bài đăng */
+  .post-list .list-group-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-item .post-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .post-item .post-title:hover {
+    text-decoration: underline;
+  }
+  
+  .post-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* Cải thiện phần giao diện người dùng */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .account-heading {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .account-img {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+  }
+  
+  .media-body {
+    padding-top: 10px;
+  }
+  
+  /* Styling the search form container */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling the input field */
+  .search-form .form-control {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  
+  /* Styling the submit button */
+  .search-form button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-form button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-form button[type="submit"]:active {
+    transform: scale(0.98);
+  }
+  
+  /* Adding responsiveness */
+  @media (max-width: 768px) {
+    .search-form {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .search-form .form-control,
+    .search-form button[type="submit"] {
+      width: 100%;
+    }
+  }
+  
+
+
+
+  /*dropdown css*/
+
+

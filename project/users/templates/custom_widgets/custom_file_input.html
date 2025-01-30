@@ -1,0 +1,30 @@
+
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'custom_css/custom_file_input.css' %}">
+ 
+</head>
+<body>
+    <div class="custom-file-upload">
+        <label for="{{ widget.id_for_label }}" class="custom-upload-button">
+            {% if widget.attrs.label %}
+                {{ widget.attrs.label }}
+            {% else %}
+                {% trans 'Choose Your Image' %}<!-- Nội dung mặc định của nút bấm -->
+            {% endif %}
+        </label>
+        
+        <input type="file" name="{{ widget.name }}" id="{{ widget.id_for_label }}" accept="image/*" style="display:none;"> <!-- Ẩn input file -->
+
+    </div>
+    
+    <script src="{% static 'custom_js/custom_file_input.js' %}"></script>
+
+</body>
+</html>
