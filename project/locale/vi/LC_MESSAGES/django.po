@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 09:36+0900\n"
+"POT-Creation-Date: 2025-01-30 14:40+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,7 +144,7 @@ msgstr "Hãy để lại lời nhận xét của bạn"
 msgid "Post Comment"
 msgstr "Đăng bình luận"
 
-#: .\blog\templates\blog\post_detail.html:114
+#: .\blog\templates\blog\post_detail.html:115
 msgid "No comments yet"
 msgstr "Chưa có Bình luận nào về bài viết"
 
