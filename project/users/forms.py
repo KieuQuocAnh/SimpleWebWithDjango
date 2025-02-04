@@ -51,6 +51,7 @@ class UserRegisterForm(UserCreationForm):
         max_length=200, help_text=_('Required. Inform a valid email address.'),
         widget=forms.EmailInput(attrs={'placeholder': _('Enter Your Email')}))
     password1 = forms.CharField(
+        help_text=_('*Password must be at least 8 characters long and not similar to the username, email, or personal information.'),
         label=_("Password"),
         widget=forms.TextInput(attrs={
             "id": "password-field",
@@ -60,6 +61,7 @@ class UserRegisterForm(UserCreationForm):
             )
     password2 = forms.CharField(
         label=_('Confirm Password'),
+        help_text=_('*Password must be at least 8 characters long and not similar to the username, email, or personal information.'),
         widget=forms.TextInput(attrs={
             "id": 'password-field',
             'placeholder':_('Confirm Your Password')
@@ -132,11 +134,13 @@ class PasswordChangingForm(PasswordChangeForm):
     )
     new_password1 = forms.CharField(
         label=_('PassWord'),
+        help_text=_('*Password must be at least 8 characters long and not similar to the username, email, or personal information.'),
         max_length=100,
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _('Enter new password')})
     )
     new_password2 = forms.CharField(
         label=_('Confirm Password'),
+        help_text=_('*Password must be at least 8 characters long and not similar to the username, email, or personal information.'),
         max_length=100,
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _('Confirm new password')})
     )
