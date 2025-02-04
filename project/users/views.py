@@ -33,7 +33,7 @@ class UserLoginView(LoginView):
         return kwargs
     def get_success_url(self):
         # Chuyển hướng sau khi đăng nhập thành công
-        return reverse_lazy('blog-home')  # Thay 'home' bằng tên URL của bạn
+        return reverse_lazy('profile')  # Thay 'home' bằng tên URL của bạn
     
 
 # View xử lý đăng ký người dùng mới
